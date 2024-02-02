@@ -39,27 +39,27 @@ _Make a list of examples of what the function will take and return._
 
 """
 Given a text which contains #TODO 
-It returns a True
+It returns True
 """
-find_todo_in_text("hello WORLD #TODO") => [True]
+find_todo_in_text("#TODO - go buy some rice") => [True]
 
 """
-Given two uppercase words
-It returns a list with both words
+Given a text which does not contain #TODO 
+It returns False
 """
-find_todo_in_text("HELLO WORLD") => ["HELLO", "WORLD"]
+find_todo_in_text(" - go buy some rice") => [False]
 
 """
-Given two lowercase words
-It returns an empty list
+given a empty string 
+it returns error message "provide text"
 """
-find_todo_in_text("hello world") => []
+find_todo_in_text("") => "provide text"
 
 """
-Given a lower and a mixed case word
-It returns an empty list
+Given a string that contains todo without # 
+It returns False
 """
-find_todo_in_text("hello WoRLD") => []
+find_todo_in_text("TODO - go buy some rice") => False
 
 """
 Given a lowercase word and an uppercase word with an exclamation mark
