@@ -51,9 +51,9 @@ find_todo_in_text(" - go buy some rice") => [False]
 
 """
 given a empty string 
-it returns error message "provide text"
+it returns error message 
 """
-find_todo_in_text("") => "provide text"
+find_todo_in_text("") => "No text given. Please provide text"
 
 """
 Given a string that contains todo without # 
@@ -62,22 +62,18 @@ It returns False
 find_todo_in_text("TODO - go buy some rice") => False
 
 """
-Given a lowercase word and an uppercase word with an exclamation mark
-It returns a list with the uppercase word, no exclamation mark
+Given a non string value
+An error msg is returned
 """
-find_todo_in_text("hello WORLD!") => ["WORLD"]
+find_todo_in_text(123) throws an error => ["Please provide a string value"]
 
 """
-Given an empty string
-It returns an empty list
+Given missing arguments
+An error msg is returned
 """
-find_todo_in_text("") => []
-
-"""
-Given a None value
-It throws an error
-"""
-find_todo_in_text(None) throws an error
+def test_todo_returns_error_message_from_missing_arguments():
+    find_todo_in_text() = "Missing arguments. Please provide an argument"
+   
 ```
 
 _Encode each example as a test. You can add to the above list as you go._
